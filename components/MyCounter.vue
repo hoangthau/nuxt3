@@ -37,6 +37,7 @@ const props = defineProps({
 });
 const count = ref(10);
 
+// need to add computed for props changes
 const checkLoading = computed(() => {
   return props.isLoading;
 });
