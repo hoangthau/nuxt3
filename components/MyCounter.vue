@@ -2,7 +2,10 @@
   <div>
     <h2>Counter</h2>
     <p v-if="checkLoading" :class="{ 'loading': checkLoading }">Loading ...</p>
-    <p>{{ count }}</p>
+    <h1 class="text-3xl mb-10">{{ count }}</h1>
+    <button @click="count = count + step">Increment</button>
+    <button @click="count = count - step">Decrement</button>
+    <button @click="changeStep">Change step</button>
     <ul>
       <li v-for="item in data?.itemList" :key="item.id">{{ item.name }}</li>
     </ul>
@@ -36,11 +39,16 @@ const props = defineProps({
   },
 });
 const count = ref(10);
+let step = 1;
 
 // need to add computed for props changes
 const checkLoading = computed(() => {
   return props.isLoading;
 });
+
+function changeStep() {
+  step = step === 1 ? 10 : 1;
+}
 
 console.log('render')
 </script>
