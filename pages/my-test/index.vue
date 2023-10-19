@@ -1,22 +1,16 @@
 <template>
-  <MyCounter :is-loading="isLoading">
-
+  <MyCounter :is-loading="isLoading" ref="counterRef">
+    <button @click="updateCounter">Update counter from ref</button>
   </MyCounter>
-  <button @click="handleScroll">
-    Scroll to #element
-  </button>
-
-  <button v-scroll-to="'#element'">
-    Scroll to #element 2
-  </button>
-
-  <h1 id="element">Hi. I'm element</h1>
+  <RatingControl v-model="rating"></RatingControl>
 </template>
 
 <script setup lang="ts">
+import MyCounter from '~/components/MyCounter.vue';
+
 const isLoading = ref(true);
-const { $scrollTo } = useNuxtApp();
-const router = useRouter();
+const counterRef = ref<InstanceType<typeof MyCounter> | null>(null);
+const rating = ref('poor')
 
 onMounted(() => {
   setTimeout(() => {
@@ -25,15 +19,11 @@ onMounted(() => {
   }, 2000)
 })
 
-function handleScroll() {
-  $scrollTo('#element');
+function updateCounter() {
+  counterRef.value?.changeStep();
+  console.log(rating.value);
 }
 </script>
 
-<style scoped>
-h1,
-button {
-  margin-bottom: 1000px;
-}
-</style>
+<style scoped></style>
 

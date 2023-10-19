@@ -50,5 +50,9 @@ function changeStep() {
   step = step === 1 ? 10 : 1;
 }
 
+defineExpose({
+  changeStep
+})
+
 console.log('render')
 </script>
