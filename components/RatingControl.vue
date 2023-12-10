@@ -12,6 +12,11 @@ function select(value: string) {
   activeItem.value = value;
   emits('update:modelValue', value);
 }
+
+onRenderTracked(() => {
+  console.log('render');
+})
+
 </script>
 <template>
   <h3>RatingControl</h3>
