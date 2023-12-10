@@ -26,6 +26,8 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+  max-width: 800px;
+  margin: auto;
 }
 
 #__nuxt {

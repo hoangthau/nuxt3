@@ -1,0 +1,3 @@
+<template>
+  Intro page
+</template>
