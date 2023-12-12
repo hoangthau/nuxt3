@@ -14,6 +14,9 @@
   <ul>
     <ListItem v-for="item in list" :id="item.id" :title="item.title" :active-id="activeId" @click="clickOnItem" v-memo="[item.id !== activeId]" />
   </ul>
+  <hr />
+  <h3 class="font-bold">Shallow ref</h3>
+  <a href="https://vuejs.org/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures">https://vuejs.org/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures</a>
 </template>
 
 <script setup lang="ts">
