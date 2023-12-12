@@ -1,21 +1,24 @@
 <script setup lang="ts">
 
 const props = defineProps<{
-  modelValue: string
+  modelValue: string;
+  status: boolean;
 }>();
 
-const emits = defineEmits(['update:modelValue']);
+const emits = defineEmits(['update:modelValue', 'update:status']);
 
 const activeItem = ref<string | null>(props.modelValue);
+const checkStatus = ref(props.status);
 
 function select(value: string) {
   activeItem.value = value;
   emits('update:modelValue', value);
 }
 
-onRenderTracked(() => {
-  console.log('render');
-})
+function changeStatus(e: any) {
+  console.log(e.target.checked);
+  emits('update:status', checkStatus.value )
+}
 
 </script>
 <template>
@@ -31,6 +34,8 @@ onRenderTracked(() => {
       <button @click=" select('great')">Great</button>
     </li>
   </ul>
+  status
+  <input type="checkbox" v-model="checkStatus" @change="changeStatus" />
 </template>
 <style scoped>
 ul {
