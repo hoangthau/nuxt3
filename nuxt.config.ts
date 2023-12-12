@@ -5,13 +5,15 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/intro': { prerender: true },
     // Product page generated on-demand, revalidates in background
-    '/products/**': { swr: 3600 },
+    '/products/**': { swr: 5 },
     // Blog post generated on-demand once until next deploy
     '/blog/**': { isr: true },
     // Admin dashboard renders only on client-side
     '/admin/**': { ssr: false },
     // Redirects legacy urls
-    '/old-page': { redirect: '/new-page' }
+    '/old-page': { redirect: '/new-page' },
+    // Add cors headers on API routes
+    '/api/**': { cors: true },
   },
   devtools: { enabled: true },
   modules: [
