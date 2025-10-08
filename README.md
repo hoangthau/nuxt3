@@ -12,6 +12,7 @@ sample2
 # npm
 npm install
 # maintest1
+# maintest2
 # pnpm
 pnpm install
 
