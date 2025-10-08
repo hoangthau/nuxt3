@@ -6,6 +6,8 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 Make sure to install the dependencies:
 test 4
+sample1
+sample2
 ```bash
 # npm
 npm install
