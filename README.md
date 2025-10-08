@@ -8,6 +8,7 @@ test 3
 
 Make sure to install the dependencies:
 test 4
+sample1
 ```bash
 # npm
 npm install
