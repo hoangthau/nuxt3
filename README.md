@@ -13,6 +13,7 @@ sample2
 npm install
 # maintest1
 # maintest2
+# maintest3
 # pnpm
 pnpm install
 
