@@ -5,6 +5,9 @@
     <span>fix2</span>
     <span>fix3</span>
   </div>
+  <div>
+    test1
+  </div>
 </template>
 
 <script setup>
