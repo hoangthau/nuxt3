@@ -9,6 +9,7 @@
 
 <script setup>
 const error = useError();
+const a = 1;
 </script>
 
 <style>
