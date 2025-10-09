@@ -2,6 +2,7 @@
   <div>
     <p>Error {{ error.statusCode }}</p>
     <span>fix1</span>
+    <span>fix2</span>
   </div>
 </template>
 
